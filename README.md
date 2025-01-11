@@ -14,7 +14,7 @@ This is a Discord music bot built using JavaScript. It allows users to play, pau
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/discord-music-bot.git
+   git clone https://github.com/iammonsterbunny/Discord-Music-Bot.git
    ```
 
 2. Navigate to the project directory:
