@@ -2,5 +2,17 @@
   "token": "YOUR_DISCORD",
   "prefix": "!",
   "ownerId": "YOUR_DISCORD_USER_ID",
-  "defaultVolume": 50
+  "defaultVolume": 50,
+  "lavalink": {
+    "nodes": [
+      {
+        "host": "localhost",
+        "port": 2333,
+        "password": "youshallnotpass",
+        "retryAmount": 5,
+        "retryDelay": 1000,
+        "secure": false
+      }
+    ]
+  }
 }
