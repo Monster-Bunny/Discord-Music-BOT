@@ -1,0 +1,6 @@
+{
+  "token": "YOUR_DISCORD",
+  "prefix": "!",
+  "ownerId": "YOUR_DISCORD_USER_ID",
+  "defaultVolume": 50
+}
