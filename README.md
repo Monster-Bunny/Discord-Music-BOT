@@ -1,123 +1,77 @@
-# Discord Music Bot 🎵
+# Discord Music Bot with Slash Commands 🎵
 
-A powerful Discord music bot built with Discord.js and Lavalink. Enjoy high-quality music playback with minimal lag.
+A modern Discord music bot built with Discord.js v14, featuring slash commands and Lavalink integration.
 
 ## ✨ Features
 
+- 🔥 Slash Commands Support
 - 🎵 High-quality music playback
-- 🔊 Volume control
-- ⏯️ Play/Pause/Resume controls
-- ⏭️ Skip tracks
-- 📜 Queue system
-- 🔗 Supports multiple music sources
+- 🎯 Easy to use interface
+- ⚡ Fast and reliable
+- 📋 Queue management
+- 🎨 Rich embed messages
+- 🔗 Supports:
   - YouTube
   - Spotify
   - SoundCloud
   - Direct links
 
-## 📋 Prerequisites
+## 📋 Requirements
 
-- Node.js 16.x or higher
-- Java 11 or higher (for Lavalink)
-- Discord Bot Token
-- Server to host the bot
+- Node.js 16.9.0 or higher
+- Discord.js v14
+- Java 13+ (for Lavalink)
+- Discord Bot Token with following intents:
+  - GUILDS
+  - GUILD_VOICE_STATES
 
-## 🚀 Quick Start
+## 🚀 Installation
 
-1. **Clone and Install:**
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/iammonsterbunny/Discord-Music-Bot.git
-   cd Discord-Music-Bot
+   git clone https://github.com/iammonsterbunny/Discord-Music-BOT.git
+   cd Discord-Music-BOT
    npm install
    ```
 
-2. **Lavalink Setup:**
-   - Download [Lavalink.jar](https://github.com/lavalink-devs/Lavalink/releases)
-   - Create `application.yml`:
-   ```yaml
-   server:
-     port: 2333
-     address: YOUR_SERVER_IP
-   lavalink:
-     server:
-       password: "youshallnotpass"
-       sources:
-         youtube: true
-         bandcamp: true
-         soundcloud: true
-         twitch: true
-         vimeo: true
-   ```
-
-3. **Configure Bot:**
-   Create `config.json`:
+2. **Configure the bot**
+   - Rename `config.json.example` to `config.json`
+   - Fill in your bot token
+   - Add your guild IDs for slash commands
    ```json
    {
      "token": "YOUR_BOT_TOKEN",
-     "prefix": "!",
-     "ownerId": "YOUR_DISCORD_USER_ID",
-     "defaultVolume": 50,
-     "status": {
-       "type": "LISTENING",
-       "text": "/play | Music Bot",
-       "status": "online"
-     },
-     "lavalink": {
-       "nodes": [
-         {
-           "host": "YOUR_SERVER_IP",
-           "port": 2333,
-           "password": "youshallnotpass",
-           "secure": false
-         }
-       ]
-     }
+     "guildIds": ["YOUR_GUILD_ID_1", "YOUR_GUILD_ID_2"],
+     "ownerId": "YOUR_DISCORD_USER_ID"
    }
    ```
 
-## 🎮 Commands
+3. **Set up Lavalink**
+   - Download Lavalink server
+   - Configure application.yml
+   - Start Lavalink server
+
+4. **Deploy slash commands**
+   ```bash
+   node src/deploy-commands.js
+   ```
+
+5. **Start the bot**
+   ```bash
+   node src/index.js
+   ```
+
+## 🎮 Available Slash Commands
 
 | Command | Description |
 |---------|-------------|
-| `/play` | Play a song or playlist |
-| `/pause` | Pause current track |
-| `/resume` | Resume playback |
-| `/stop` | Stop and clear queue |
-| `/skip` | Skip current track |
-| `/queue` | View current queue |
+| `/play` | Play a song from URL or search |
+| `/pause` | Pause current playback |
+| `/resume` | Resume paused music |
+| `/stop` | Stop playback and clear queue |
+| `/skip` | Skip to next song |
+| `/help` | Show all available commands |
 
-## 🚦 Running the Bot
+## ⚙️ Configuration
 
-1. **Start Lavalink:**
-   ```bash
-   java -jar Lavalink.jar
-   ```
-
-2. **Start the Bot:**
-   ```bash
-   npm start
-   ```
-
-## 🔧 Troubleshooting
-
-Common issues and solutions:
-
-- **Bot won't connect**: Check if Lavalink is running
-- **No sound**: Verify bot has proper permissions
-- **Connection errors**: Check firewall settings for port 2333
-
-## 🤝 Contributing
-
-1. Fork the repo
-2. Create feature branch
-3. Commit changes
-4. Push to branch
-5. Create Pull Request
-
-## 📝 License
-
-This project is [MIT](LICENSE) licensed.
-
-## 💖 Support
-
-Star this repo if you found it helpful!
+The `config.json` file supports the following options:

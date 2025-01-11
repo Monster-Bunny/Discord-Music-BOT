@@ -1,6 +1,13 @@
+const { SlashCommandBuilder } = require('@discordjs/builders');
+
 module.exports = {
-    name: 'play',
-    description: 'Play a song from a URL or name',
+    data: new SlashCommandBuilder()
+        .setName('play')
+        .setDescription('Play a song from a URL or name')
+        .addStringOption(option =>
+            option.setName('song')
+                .setDescription('The URL or name of the song to play')
+                .setRequired(true)),
     async execute(interaction) {
         const song = interaction.options.getString('song');
         const queue = interaction.client.musicQueue.get(interaction.guild.id);

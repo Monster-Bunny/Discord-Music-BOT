@@ -2,6 +2,7 @@
   "token": "YOUR_DISCORD",
   "prefix": "!",
   "ownerId": "YOUR_DISCORD_USER_ID",
+  "guildIds": ["YOUR_GUILD_ID_1", "YOUR_GUILD_ID_2"],
   "defaultVolume": 50,
   "status": {
     "type": "LISTENING",

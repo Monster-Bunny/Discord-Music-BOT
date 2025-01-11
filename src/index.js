@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const { token } = require('../config.json');
 const loadCommands = require('./commands/index');
 const handleReady = require('./events/ready');
@@ -10,11 +10,16 @@ const client = new Client({
     ]
 });
 
+client.commands = new Collection();
+const commands = loadCommands();
+for (const [name, command] of commands) {
+    client.commands.set(name, command);
+}
+
 client.once('ready', () => {
     handleReady(client);
+    console.log('Bot is ready!');
 });
-
-client.commands = loadCommands();
 
 client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
