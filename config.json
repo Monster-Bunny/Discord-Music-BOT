@@ -6,7 +6,7 @@
   "lavalink": {
     "nodes": [
       {
-        "host": "localhost",
+        "host": "YOUR_SERVER_IP",
         "port": 2333,
         "password": "youshallnotpass",
         "retryAmount": 5,

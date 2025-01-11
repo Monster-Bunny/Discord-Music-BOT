@@ -40,7 +40,7 @@ This is a Discord music bot built using JavaScript and Lavalink for high-quality
      ```yaml
      server:
        port: 2333
-       address: 127.0.0.1
+       address: YOUR_SERVER_IP
      lavalink:
        server:
          password: "youshallnotpass"
