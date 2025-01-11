@@ -1,66 +1,73 @@
-# Discord Music Bot
+# Discord Music Bot 🎵
 
-This is a Discord music bot built using JavaScript and Lavalink for high-quality music playback. It allows users to play, pause, skip, and stop music in a voice channel.
+A powerful Discord music bot built with Discord.js and Lavalink. Enjoy high-quality music playback with minimal lag.
 
-## Prerequisites
+## ✨ Features
 
-- Node.js v16 or higher
-- Java 11 or higher (for Lavalink server)
-- Lavalink server
+- 🎵 High-quality music playback
+- 🔊 Volume control
+- ⏯️ Play/Pause/Resume controls
+- ⏭️ Skip tracks
+- 📜 Queue system
+- 🔗 Supports multiple music sources
+  - YouTube
+  - Spotify
+  - SoundCloud
+  - Direct links
 
-## Features
+## 📋 Prerequisites
 
-- Play music from a URL or song name
-- Pause and resume playback
-- Skip to the next song in the queue
-- Stop playback and clear the queue
-- Slash command support for easy usage
+- Node.js 16.x or higher
+- Java 11 or higher (for Lavalink)
+- Discord Bot Token
+- Server to host the bot
 
-## Installation
+## 🚀 Quick Start
 
-1. Clone the repository:
-   ```
+1. **Clone and Install:**
+   ```bash
    git clone https://github.com/iammonsterbunny/Discord-Music-Bot.git
-   ```
-
-2. Navigate to the project directory:
-   ```
-   cd discord-music-bot
-   ```
-
-3. Install the dependencies:
-   ```
+   cd Discord-Music-Bot
    npm install
    ```
 
-4. Download and Set up Lavalink:
-   - Download Lavalink.jar from [GitHub Releases](https://github.com/lavalink-devs/Lavalink/releases)
-   - Create an `application.yml` file in the same directory as Lavalink.jar
-   - Add the following configuration:
-     ```yaml
+2. **Lavalink Setup:**
+   - Download [Lavalink.jar](https://github.com/lavalink-devs/Lavalink/releases)
+   - Create `application.yml`:
+   ```yaml
+   server:
+     port: 2333
+     address: YOUR_SERVER_IP
+   lavalink:
      server:
-       port: 2333
-       address: YOUR_SERVER_IP
-     lavalink:
-       server:
-         password: "youshallnotpass"
-     ```
+       password: "youshallnotpass"
+       sources:
+         youtube: true
+         bandcamp: true
+         soundcloud: true
+         twitch: true
+         vimeo: true
+   ```
 
-5. Create a `config.json` file in the root directory with the following structure:
+3. **Configure Bot:**
+   Create `config.json`:
    ```json
    {
      "token": "YOUR_BOT_TOKEN",
-     "prefix": "/",
+     "prefix": "!",
      "ownerId": "YOUR_DISCORD_USER_ID",
      "defaultVolume": 50,
+     "status": {
+       "type": "LISTENING",
+       "text": "/play | Music Bot",
+       "status": "online"
+     },
      "lavalink": {
        "nodes": [
          {
-           "host": "localhost",
+           "host": "YOUR_SERVER_IP",
            "port": 2333,
            "password": "youshallnotpass",
-           "retryAmount": 5,
-           "retryDelay": 1000,
            "secure": false
          }
        ]
@@ -68,34 +75,49 @@ This is a Discord music bot built using JavaScript and Lavalink for high-quality
    }
    ```
 
-## Usage
+## 🎮 Commands
 
-1. Start the Lavalink server:
-   ```
+| Command | Description |
+|---------|-------------|
+| `/play` | Play a song or playlist |
+| `/pause` | Pause current track |
+| `/resume` | Resume playback |
+| `/stop` | Stop and clear queue |
+| `/skip` | Skip current track |
+| `/queue` | View current queue |
+
+## 🚦 Running the Bot
+
+1. **Start Lavalink:**
+   ```bash
    java -jar Lavalink.jar
    ```
 
-2. In a separate terminal, run the bot:
-   ```
+2. **Start the Bot:**
+   ```bash
    npm start
    ```
 
-3. Invite the bot to your server and use the following commands in a text channel:
-   - `/play <song_url_or_name>`: Play a song
-   - `/pause`: Pause the currently playing song
-   - `/skip`: Skip to the next song
-   - `/stop`: Stop playback and clear the queue
+## 🔧 Troubleshooting
 
-## Contributing
+Common issues and solutions:
 
-Feel free to submit issues or pull requests to improve the bot!
+- **Bot won't connect**: Check if Lavalink is running
+- **No sound**: Verify bot has proper permissions
+- **Connection errors**: Check firewall settings for port 2333
 
-## Troubleshooting
+## 🤝 Contributing
 
-- Make sure Lavalink server is running before starting the bot
-- Check if Java 11 or higher is installed
-- Verify the Lavalink configuration matches in both application.yml and config.json
+1. Fork the repo
+2. Create feature branch
+3. Commit changes
+4. Push to branch
+5. Create Pull Request
 
-## License
+## 📝 License
 
-This project is licensed under the MIT License.
+This project is [MIT](LICENSE) licensed.
+
+## 💖 Support
+
+Star this repo if you found it helpful!

@@ -3,6 +3,11 @@
   "prefix": "!",
   "ownerId": "YOUR_DISCORD_USER_ID",
   "defaultVolume": 50,
+  "status": {
+    "type": "LISTENING",
+    "text": "/play | Music Bot",
+    "status": "online"
+  },
   "lavalink": {
     "nodes": [
       {
